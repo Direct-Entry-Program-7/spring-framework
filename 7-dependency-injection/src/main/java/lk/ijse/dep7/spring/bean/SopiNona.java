@@ -2,14 +2,17 @@ package lk.ijse.dep7.spring.bean;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+@Order(3)
+@Usai
 @Primary
 @Qualifier("sudu")
 @Component
-public class SopiNona implements GoodGirl{
+public class SopiNona implements GoodGirl {
 
-    void abc(){
+    void abc() {
         System.out.println("Ummmaaa.....!");
     }
 

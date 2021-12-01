@@ -1,6 +1,6 @@
 package lk.ijse.dep7.spring;
 
-import lk.ijse.dep7.spring.bean.Boy;
+import lk.ijse.dep7.spring.bean.CustomerService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class AppInitializer {
@@ -10,8 +10,7 @@ public class AppInitializer {
         ctx.register(AppConfig.class);
         ctx.refresh();
 
-        Boy dinusha = ctx.getBean(Boy.class);
-//        dinusha.kissHer();
-        dinusha.listAllGirlFriends();
+        CustomerService customerService = ctx.getBean(CustomerService.class);
+        customerService.saveCustomer();
     }
 }
