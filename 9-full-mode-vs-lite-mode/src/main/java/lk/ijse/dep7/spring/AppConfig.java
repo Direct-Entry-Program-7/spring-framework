@@ -4,14 +4,17 @@ import lk.ijse.dep7.spring.bean.FullBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @ComponentScan
 @Configuration
 public class AppConfig {
 
+    @Scope("prototype")
     @Bean
-    public FullBean fullBean(String s){
-        return new FullBean(s);
+    public FullBean fullBean(){
+        System.out.println("fullBean()");
+        return new FullBean(myString());
     }
 
     @Bean
@@ -19,5 +22,4 @@ public class AppConfig {
         System.out.println("myString()");
         return "IJSE";
     }
-
 }

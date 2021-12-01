@@ -18,10 +18,10 @@ public class AppInitializer {
         FullBean fullBean2 = ctx.getBean(FullBean.class);
         System.out.println(fullBean2);
 
-        LiteBean liteBean1 = ctx.getBean(LiteBean.class);
-        System.out.println(liteBean1);
-
-        LiteBean liteBean2 = ctx.getBean(LiteBean.class);
-        System.out.println(liteBean2);
+//        LiteBean liteBean1 = ctx.getBean(LiteBean.class);
+//        System.out.println(liteBean1);
+//
+//        LiteBean liteBean2 = ctx.getBean(LiteBean.class);
+//        System.out.println(liteBean2);
     }
 }
