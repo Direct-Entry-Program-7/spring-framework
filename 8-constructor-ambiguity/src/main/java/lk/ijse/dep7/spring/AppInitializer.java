@@ -10,7 +10,8 @@ public class AppInitializer {
         ctx.register(AppConfig.class);
         ctx.refresh();
 
-        CustomerService customerService = ctx.getBean(CustomerService.class);
-        customerService.saveCustomer();
+        CustomerService cs = ctx.getBean(CustomerService.class);
+        System.out.println(cs);
+//        cs.saveCustomer();
     }
 }
