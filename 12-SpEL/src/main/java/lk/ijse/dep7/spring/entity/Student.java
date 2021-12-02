@@ -9,6 +9,7 @@ public class Student {
     private String id;
 //    @Setter(AccessLevel.NONE)
     private String name;
+    private String address;
 
 //    public String getId(){
 //        return "S001";
