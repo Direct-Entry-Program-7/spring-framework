@@ -1,0 +1,3 @@
+rootProject.name = '11-value-injections'
+
+System.out.println("settings.gradle file");
