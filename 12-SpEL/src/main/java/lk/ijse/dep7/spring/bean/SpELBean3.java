@@ -33,9 +33,10 @@ public class SpELBean3 {
     @Value("#{T(lk.ijse.dep7.spring.util.AppUtil).age ge 40}")
     private boolean isOld;
 
-    @Value("#{(T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2() ne null)? " +
-            "T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2() : " +
-            "T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents()}")
+//    @Value("#{(T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2() ne null)? " +
+//            "T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2() : " +
+//            "T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents()}")
+    @Value("#{(T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2())?:T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents()}")
     private List<Student> studentList2;
 
     @PostConstruct
