@@ -39,6 +39,9 @@ public class SpELBean3 {
     @Value("#{(T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2())?:T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents()}")
     private List<Student> studentList2;
 
+    @Value("#{T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2()?.size()?:0}")
+    private int studentCount;
+
     @PostConstruct
     public void init() {
         studentList.forEach(System.out::println);
@@ -49,5 +52,6 @@ public class SpELBean3 {
         System.out.println(sum);
         System.out.println(isOld);
         studentList2.forEach(System.out::println);
+        System.out.println(studentCount);
     }
 }
