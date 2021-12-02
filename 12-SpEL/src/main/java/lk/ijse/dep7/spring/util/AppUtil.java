@@ -12,7 +12,7 @@ public class AppUtil {
     public static List<Student> getAllStudents(){
         List<Student> studentList = new ArrayList<>();
         studentList.add(new Student("S001", "Aruni", "Matara"));
-        studentList.add(new Student("S002", "Randunu", "Thangalle"));
+        studentList.add(new Student("S002", "Randunu", "Colombo"));
         studentList.add(new Student("S003", "Pethum", "Galle"));
         studentList.add(new Student("S004", "Sovis", "Moratuwa"));
         studentList.add(new Student("S005", "Hamza", "Colombo"));

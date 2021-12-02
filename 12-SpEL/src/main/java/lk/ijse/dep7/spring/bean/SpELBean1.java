@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Some Basic SpEL Injections
@@ -19,6 +21,13 @@ public class SpELBean1 {
     public double spE4;
     @Value("#{'ijse'}")
     private String spE1;
+
+    @Value("#{{'kasun', 'nuwan', 'ruwan', 'supun', 'aruni', 'dinusha', 'gayal', 'manoj'}}")
+    private List<String> names;
+
+    public List<String> getNames() {
+        return names;
+    }
 
     @PostConstruct
     public void init() {

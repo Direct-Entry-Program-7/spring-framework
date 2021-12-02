@@ -11,7 +11,7 @@ public class AppConfig {
 
     @Bean
     public Student student(){
-        return new Student("S010", "Gayal");
+        return new Student("S010", "Gayal", "Galle");
     }
 
 }
