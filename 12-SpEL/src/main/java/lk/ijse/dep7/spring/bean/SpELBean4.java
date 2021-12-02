@@ -2,11 +2,14 @@ package lk.ijse.dep7.spring.bean;
 
 import lk.ijse.dep7.spring.entity.Student;
 import lk.ijse.dep7.spring.util.AppUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class SpELBean4 {
@@ -32,6 +35,10 @@ public class SpELBean4 {
     @Value("#{@spELBean1.names.?[toString().contains('w') || toString().contains('u')]}")
     private List<String> nameList2;
 
+    @Qualifier("map")
+    @Autowired
+    private Map<String, Student> students;
+
     @PostConstruct
     public void init(){
         System.out.println(studentList1);
@@ -41,5 +48,7 @@ public class SpELBean4 {
         System.out.println(nameList);
         System.out.println(addressList);
         nameList2.forEach(System.out::println);
+        System.out.println("------------------------");
+        System.out.println(students);
     }
 }
