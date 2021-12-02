@@ -24,11 +24,29 @@ public class SpELBean3 {
     @Value("#{@student.getName().toUpperCase()}")
     private String name;
 
+    @Value("#{@student.id matches 'S\\d{3}'}")
+    private boolean validID;
+
+    @Value("#{10 + T(lk.ijse.dep7.spring.util.AppUtil).age}")
+    private int sum;
+
+    @Value("#{T(lk.ijse.dep7.spring.util.AppUtil).age ge 40}")
+    private boolean isOld;
+
+    @Value("#{(T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2() ne null)? " +
+            "T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents2() : " +
+            "T(lk.ijse.dep7.spring.util.AppUtil).getAllStudents()}")
+    private List<Student> studentList2;
+
     @PostConstruct
     public void init() {
         studentList.forEach(System.out::println);
         System.out.println(age);
         System.out.println(student);
         System.out.println(name);
+        System.out.println(validID);
+        System.out.println(sum);
+        System.out.println(isOld);
+        studentList2.forEach(System.out::println);
     }
 }
