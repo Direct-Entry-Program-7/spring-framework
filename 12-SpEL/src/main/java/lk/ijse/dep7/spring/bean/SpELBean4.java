@@ -35,9 +35,14 @@ public class SpELBean4 {
     @Value("#{@spELBean1.names.?[toString().contains('w') || toString().contains('u')]}")
     private List<String> nameList2;
 
-    @Qualifier("map")
-    @Autowired
-    private Map<String, Student> students;
+//    @Value("#{@students.![value].?[getAddress() matches 'Galle'].![name]}")
+    //@Value("#{@students.?[getValue().address matches 'Galle'].![value].![name]}")
+    //private List<String> students;
+
+    //@Value("#{@students.?[value.getAddress() matches 'Galle'].![value.name]}")
+    @Value("#{@students.?[value.getAddress() matches 'Galle'].![value].![name]}")
+    //private Map<String, Student> listOfStudents;
+    private List<String> listOfStudents;
 
     @PostConstruct
     public void init(){
@@ -49,6 +54,6 @@ public class SpELBean4 {
         System.out.println(addressList);
         nameList2.forEach(System.out::println);
         System.out.println("------------------------");
-        System.out.println(students);
+        System.out.println(listOfStudents);
     }
 }
